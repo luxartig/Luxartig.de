@@ -144,10 +144,16 @@ if (form) {
     if (err) err.textContent = message || ''
   }
 
+  // TODO: replace with the real Web3Forms access key (free, no password —
+  // sign up at web3forms.com, the key arrives by email). Until then,
+  // submission falls back to opening the visitor's own mail app.
+  const WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY'
+
   function validate() {
     let ok = true
     const name = form.querySelector('#name')
     const email = form.querySelector('#email')
+    const telefon = form.querySelector('#telefon')
     const branche = form.querySelector('#branche')
 
     if (!name.value.trim()) { setError(name, 'Bitte gib deinen Namen an.'); ok = false } else setError(name, '')
@@ -155,12 +161,31 @@ if (form) {
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())
     if (!emailOk) { setError(email, 'Bitte gib eine gültige E-Mail-Adresse an.'); ok = false } else setError(email, '')
 
+    if (!telefon.value.trim()) { setError(telefon, 'Bitte gib deine Telefonnummer an.'); ok = false } else setError(telefon, '')
+
     if (!branche.value) { setError(branche, 'Bitte wähle deine Branche.'); ok = false } else setError(branche, '')
 
     return ok
   }
 
-  form.addEventListener('submit', (e) => {
+  function mailtoFallback(data) {
+    const subject = encodeURIComponent(`Anfrage über die Website – ${data.name}`)
+    const bodyLines = [
+      `Name: ${data.name}`,
+      `E-Mail: ${data.email}`,
+      `Telefon: ${data.telefon}`,
+      `Branche: ${data.branche}`,
+      '',
+      'Nachricht:',
+      data.nachricht || '–',
+    ]
+    const body = encodeURIComponent(bodyLines.join('\n'))
+    window.location.href = `mailto:info@luxartig.de?subject=${subject}&body=${body}`
+    status.textContent = 'Dein E-Mail-Programm öffnet sich gleich mit deiner Anfrage. Alternativ erreichst du uns direkt unter info@luxartig.de.'
+    status.classList.add('is-visible', 'ok')
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault()
     status.classList.remove('is-visible', 'ok', 'err')
 
@@ -171,21 +196,40 @@ if (form) {
     }
 
     const data = Object.fromEntries(new FormData(form).entries())
-    const subject = encodeURIComponent(`Anfrage über die Website – ${data.name}`)
-    const bodyLines = [
-      `Name: ${data.name}`,
-      `E-Mail: ${data.email}`,
-      `Telefon: ${data.telefon || '–'}`,
-      `Branche: ${data.branche}`,
-      '',
-      'Nachricht:',
-      data.nachricht || '–',
-    ]
-    const body = encodeURIComponent(bodyLines.join('\n'))
-    window.location.href = `mailto:info@luxartig.de?subject=${subject}&body=${body}`
+    const submitBtn = form.querySelector('button[type="submit"]')
+    submitBtn.disabled = true
 
-    status.textContent = 'Dein E-Mail-Programm öffnet sich gleich mit deiner Anfrage. Alternativ erreichst du uns direkt unter info@luxartig.de.'
-    status.classList.add('is-visible', 'ok')
-    form.reset()
+    if (WEB3FORMS_ACCESS_KEY === 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+      mailtoFallback(data)
+      submitBtn.disabled = false
+      form.reset()
+      return
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Anfrage über die Website – ${data.name}`,
+          name: data.name,
+          email: data.email,
+          telefon: data.telefon,
+          branche: data.branche,
+          nachricht: data.nachricht || '–',
+        }),
+      })
+      const json = await res.json()
+      if (!json.success) throw new Error(json.message || 'Unbekannter Fehler')
+
+      status.textContent = 'Danke! Deine Nachricht ist angekommen — wir melden uns meist innerhalb von 24 Stunden an Werktagen.'
+      status.classList.add('is-visible', 'ok')
+      form.reset()
+    } catch (err) {
+      mailtoFallback(data)
+    } finally {
+      submitBtn.disabled = false
+    }
   })
 }

@@ -103,7 +103,7 @@ h3 { font-size: 22px; }
 }
 
 .section-head p {
-  color: var(--color-muted);
+  color: var(--color-ink);
   font-size: 18px;
   margin-top: 18px;
   text-shadow: 0 2px 16px rgba(8,4,10,0.45);
@@ -217,9 +217,8 @@ h3 { font-size: 22px; }
   background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent), #3a1f42);
   display: grid;
   place-items: center;
-  font-size: 15px;
-  color: #08181a;
-  font-weight: 800;
+  object-fit: contain;
+  padding: 4px;
 }
 
 .nav-cta { display: flex; align-items: center; gap: 12px; }
@@ -338,7 +337,7 @@ h3 { font-size: 22px; }
 .hero-sub {
   max-width: 640px;
   margin: 0 auto 40px;
-  color: var(--color-muted);
+  color: var(--color-ink);
   font-size: 19px;
 }
 
@@ -374,7 +373,7 @@ h3 { font-size: 22px; }
   z-index: 2;
   font-size: 12px;
   letter-spacing: 0.14em;
-  color: var(--color-muted);
+  color: var(--color-ink);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -568,6 +567,10 @@ h3 { font-size: 22px; }
 .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 900px) { .industry-grid { grid-template-columns: 1fr; } }
 
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 980px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
 .industry-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -590,14 +593,13 @@ h3 { font-size: 22px; }
   border-radius: 28px;
   background: linear-gradient(150deg, var(--color-accent-light), var(--color-accent));
   display: grid; place-items: center;
-  font-family: var(--font-display);
-  font-size: 30px; font-weight: 700;
-  color: #06201f;
+  object-fit: contain;
+  padding: 14px;
   margin-bottom: 26px;
   box-shadow: 0 20px 50px -14px rgba(31,152,154,0.5);
 }
 .about-loc { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent-light); font-size: 14px; margin: 14px 0 20px; }
-.about-wrap p { color: var(--color-muted); font-size: 17px; text-shadow: 0 2px 16px rgba(8,4,10,0.45); }
+.about-wrap p { color: var(--color-ink); font-size: 17px; text-shadow: 0 2px 16px rgba(8,4,10,0.45); }
 .about-quote { margin-top: 22px; font-style: italic; color: var(--color-ink); font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
 
 /* Contact */
