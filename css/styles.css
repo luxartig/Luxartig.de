@@ -586,21 +586,39 @@ h3 { font-size: 22px; }
 .industry-card li { display: flex; gap: 10px; font-size: 14.5px; color: var(--color-muted); }
 .industry-card li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); flex: none; margin-top: 8px; }
 
-/* About */
-.about-wrap { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 640px; margin: 0 auto; }
-.about-avatar {
-  width: 96px; height: 96px;
-  border-radius: 28px;
-  background: linear-gradient(150deg, var(--color-accent-light), var(--color-accent));
-  display: grid; place-items: center;
-  object-fit: contain;
-  padding: 14px;
-  margin-bottom: 26px;
-  box-shadow: 0 20px 50px -14px rgba(31,152,154,0.5);
+/* FAQ */
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 26px;
 }
-.about-loc { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent-light); font-size: 14px; margin: 14px 0 20px; }
-.about-wrap p { color: var(--color-ink); font-size: 17px; text-shadow: 0 2px 16px rgba(8,4,10,0.45); }
-.about-quote { margin-top: 22px; font-style: italic; color: var(--color-ink); font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  flex: none;
+  width: 28px; height: 28px;
+  border-radius: 9px;
+  background: var(--color-surface-2);
+  color: var(--color-accent-light);
+  display: grid; place-items: center;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { color: var(--color-muted); font-size: 15.5px; margin-top: 14px; line-height: 1.55; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
