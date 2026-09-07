@@ -99,7 +99,10 @@
           </div>
           <p>Buche dir gleich ein 15-minütiges Erstgespräch direkt in meinem Kalender.</p>
           <div class="calendar-embed">
-            <iframe src="https://api.leadconnectorhq.com/widget/booking/myzaH2Noay5wgaMoKgKD" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="myzaH2Noay5wgaMoKgKD_1"></iframe>
+            <div class="calendar-placeholder" data-calendar-placeholder data-src="https://api.leadconnectorhq.com/widget/booking/myzaH2Noay5wgaMoKgKD">
+              <p>Der Kalender wird über einen externen Dienst (GoHighLevel) geladen — dabei werden Cookies gesetzt.</p>
+              <button type="button" class="btn btn-accent btn-sm" data-cookie-load-calendar>Kalender laden</button>
+            </div>
           </div>
         </div>
 
@@ -164,13 +167,24 @@
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="agb.html">AGB</a>
+        <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
       </div>
     </div>
   </div>
 </footer>
 
+<div class="cookie-banner" data-cookie-banner>
+  <div class="cookie-banner-inner">
+    <p>Wir nutzen Cookies nur, wenn du externe Dienste wie den Chat oder die Kalenderbuchung aktivierst. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-necessary>Nur notwendige</button>
+      <button type="button" class="btn btn-accent btn-sm" data-cookie-accept>Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
-<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b7e021b5a98ef9d744a41"></script>
+<script src="js/cookie-consent.js"></script>
+
 </body>
 </html>

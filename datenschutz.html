@@ -57,15 +57,18 @@
   <p>Beim Aufruf dieser Website erhebt unser Hosting-Anbieter automatisch technische Informationen, die dein Browser übermittelt: IP-Adresse, Datum und Uhrzeit der Anfrage, aufgerufene Seite, verwendeter Browser und Betriebssystem. Diese Daten werden ausschließlich zur technischen Bereitstellung und Absicherung der Website verarbeitet (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO) und nicht mit anderen Datenquellen zusammengeführt.</p>
 
   <h2>3. Kontaktformular</h2>
-  <p>Wenn du unser Kontaktformular nutzt, öffnet sich dein E-Mail-Programm mit einer vorausgefüllten Nachricht an info@luxartig.de — deine Angaben werden dabei nicht auf einem Server gespeichert, sondern direkt per E-Mail an uns übermittelt, sobald du diese absendest. Die Verarbeitung deiner Angaben erfolgt zur Bearbeitung deiner Anfrage (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO).</p>
+  <p>Wenn du unser Kontaktformular nutzt, wird deine Anfrage je nach technischer Konfiguration entweder direkt serverseitig verarbeitet und per E-Mail an uns weitergeleitet, oder dein E-Mail-Programm öffnet sich mit einer vorausgefüllten Nachricht an info@luxartig.de. In beiden Fällen werden deine Angaben nicht dauerhaft auf einem fremden Server gespeichert. Die Verarbeitung deiner Angaben erfolgt zur Bearbeitung deiner Anfrage (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO).</p>
 
   <h2>4. Eingebundene Schriftarten</h2>
   <p>Diese Website lädt die Schriftarten „General Sans" von Fontshare und „Space Grotesk" von Google Fonts direkt von den Servern der jeweiligen Anbieter. Dabei wird deine IP-Adresse an Fontshare bzw. Google übertragen, damit die Schriftdateien ausgeliefert werden können. Eine darüberhinausgehende Speicherung ist uns nicht bekannt. Rechtsgrundlage ist unser berechtigtes Interesse an einem einheitlichen Schriftbild (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO).</p>
 
-  <h2>5. Cookies & Analyse-Tools</h2>
-  <p>Diese Website setzt aktuell <strong>keine</strong> Cookies zu Analyse- oder Marketingzwecken und keine Tracking- oder Statistik-Tools ein.</p>
+  <h2>5. Cookies und Einwilligungsverwaltung</h2>
+  <p>Beim ersten Besuch dieser Website erscheint ein Cookie-Banner, über den du wählen kannst, ob du nur technisch notwendige Funktionen oder zusätzlich externe Dienste (siehe Punkt 6) zulässt. Deine Wahl wird ausschließlich lokal in deinem Browser gespeichert (<code>localStorage</code>), nicht auf unseren Servern, und ist jederzeit über den Link „Cookie-Einstellungen" im Footer änderbar. Diese Speicherung ist technisch notwendig, um deine Entscheidung nicht bei jedem Seitenaufruf erneut abzufragen (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO, § 25 Abs.&nbsp;2 Nr.&nbsp;2 TTDSG). Ohne deine Zustimmung setzt diese Website keine Cookies zu Analyse- oder Marketingzwecken.</p>
 
-  <h2>6. Deine Rechte</h2>
+  <h2>6. Chat-Widget und Terminbuchung (GoHighLevel)</h2>
+  <p>Für den Live-Chat und die Online-Terminbuchung nutzen wir Dienste von GoHighLevel/LeadConnector. Diese laden erst, nachdem du im Cookie-Banner „Alle akzeptieren" gewählt hast bzw. den Kalender aktiv über den Button „Kalender laden" einblendest. Dabei werden Cookies gesetzt und deine IP-Adresse an den Anbieter übertragen, um den Chat bzw. die Kalenderansicht bereitzustellen. Rechtsgrundlage ist deine Einwilligung (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;a DSGVO), die du jederzeit über „Cookie-Einstellungen" im Footer widerrufen kannst.</p>
+
+  <h2>7. Deine Rechte</h2>
   <p>Du hast jederzeit das Recht auf Auskunft über die zu deiner Person gespeicherten Daten sowie auf Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gegen die Verarbeitung. Wende dich dazu einfach an info@luxartig.de. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p></div>
 
 <footer class="site-footer">
@@ -106,12 +109,24 @@
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="agb.html">AGB</a>
+        <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
       </div>
     </div>
   </div>
 </footer>
 
+<div class="cookie-banner" data-cookie-banner>
+  <div class="cookie-banner-inner">
+    <p>Wir nutzen Cookies nur, wenn du externe Dienste wie den Chat oder die Kalenderbuchung aktivierst. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-ghost btn-sm" data-cookie-necessary>Nur notwendige</button>
+      <button type="button" class="btn btn-accent btn-sm" data-cookie-accept>Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a1b7e021b5a98ef9d744a41"></script>
+<script src="js/cookie-consent.js"></script>
+
 </body>
 </html>
