@@ -147,7 +147,7 @@ if (form) {
   // TODO: replace with the real Web3Forms access key (free, no password —
   // sign up at web3forms.com, the key arrives by email). Until then,
   // submission falls back to opening the visitor's own mail app.
-  const WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY'
+  const WEB3FORMS_ACCESS_KEY = 'b44bb61c-45ac-4bf5-8669-89d6aa9a4fc3'
 
   function validate() {
     let ok = true
