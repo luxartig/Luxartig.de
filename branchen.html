@@ -4,158 +4,128 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Branchen — Luxartig</title>
-<meta name="description" content="Spezialisierte digitale Lösungen für Handwerk und Gastronomie — welche Herausforderungen typisch sind und wie Luxartig sie löst." />
+<meta name="description" content="Digitale Lösungen für Handwerk und Gastronomie in Passau und Umgebung — die typischen Herausforderungen und wie Luxartig sie löst." />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
-<link rel="preconnect" href="https://api.fontshare.com" />
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" />
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;0,800;0,900;1,900&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
 
-<header class="site-header is-scrolled">
-  <div class="container nav-row">
-    <nav class="nav-links">
-      <a href="index.html#leistungen">Leistungen</a>
-      <a href="index.html#pakete">Pakete</a>
-      <a href="branchen.html">Branchen</a>
-    </nav>
-    <a href="index.html" class="brand"><img class="brand-mark" src="assets/icon-mark.png" alt="Luxartig">Luxartig</a>
-    <div class="nav-cta">
-      <a href="blog/index.html" class="btn btn-ghost btn-sm">Blog</a>
-      <a href="kontakt.html" class="btn btn-accent btn-sm">Kostenloses Erstgespräch</a>
-    </div>
-    <button class="nav-burger" aria-label="Menü öffnen"><span class="nav-burger-icon"><span></span></span></button>
+<header class="hd">
+  <a class="hd-logo" href="index.html"><img src="assets/icon-mark.png" alt="" aria-hidden="true" />Luxartig<span style="color:var(--accent)">®</span></a>
+  <div class="hd-right">
+    <span class="hd-city">Passau</span>
+    <span class="hd-clock" data-clock>--:--:--</span>
+    <button class="menu-btn" data-menu-btn aria-label="Menü"><em style="font-style:normal" data-menu-label>MENU</em> <span>+</span></button>
   </div>
 </header>
 
-<div class="nav-drawer">
-  <a href="index.html#leistungen">Leistungen</a>
-  <a href="index.html#pakete">Pakete & Preise</a>
-  <a href="branchen.html">Branchen</a>
-  <a href="index.html#faq">FAQ</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="kontakt.html">Kontakt</a>
-  <a href="kontakt.html" class="btn btn-accent btn-block">Kostenloses Erstgespräch</a>
-</div>
-
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">Branchen</span>
-    <h1>Lösungen für deine Branche</h1>
-    <p>Jede Branche hat ihre eigenen Herausforderungen im Alltag. Wir kennen sie aus der Praxis — und haben für jede die passende digitale Lösung.</p>
+<nav class="menu-ov" aria-label="Hauptmenü">
+  <div class="menu-list">
+    <a href="index.html#leistungen"><i>01</i>Leistungen</a>
+    <a href="index.html#warum"><i>02</i>Warum Luxartig</a>
+    <a href="index.html#faq"><i>03</i>Fragen</a>
+    <a href="index.html#standort"><i>04</i>Standort</a>
+    <a href="branchen.html"><i>05</i>Branchen</a>
+    <a href="blog/index.html"><i>06</i>Blog</a>
+    <a href="kontakt.html"><i>07</i>Kontakt</a>
   </div>
+  <div class="menu-foot">
+    <a href="mailto:info@luxartig.de">info@luxartig.de</a>
+    <a href="tel:+495120153569">0851 20153569</a>
+    <span>Am Sportfeld 10 · 94121 Salzweg</span>
+    <a href="https://www.instagram.com/luxartig/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61589879194543" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.tiktok.com/@luxartig" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</nav>
+
+<section class="page-top">
+  <div class="wm">02</div>
+  <span class="tag">Branchen</span>
+  <h1>Lösungen für deine <em>Branche</em></h1>
+  <p>Jede Branche hat ihre eigenen Herausforderungen im Alltag. Wir kennen sie aus der Praxis — und haben für jede die passende digitale Lösung.</p>
 </section>
 
-<section class="section" style="padding-top:20px;">
-  <div class="container" style="max-width:980px;">
+<section class="ch" style="max-width:1100px;">
 
-    <div class="branch-block" data-reveal>
-      <div class="branch-head">
-        <div class="industry-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-3-3 2.5-2.5Z"/></svg></div>
-        <h2>Handwerk</h2>
-      </div>
-      <div class="branch-cols">
-        <div>
-          <div class="branch-col-label challenge">⚠ Deine Herausforderungen</div>
-          <ul>
-            <li>Kaum Zeit für Website und Online-Marketing neben dem Tagesgeschäft</li>
-            <li>Verpasste Anrufe, während du auf der Baustelle oder unterm Auto bist</li>
-            <li>Veraltete oder gar keine Online-Präsenz — Kunden finden dich nicht</li>
-            <li>Terminabsprachen kosten unnötig viel Zeit am Telefon</li>
-          </ul>
-        </div>
-        <div>
-          <div class="branch-col-label solution">✓ So hilft Luxartig</div>
-          <p>Wir bauen dir eine Website, die sich leicht selbst pflegen lässt, richten ein zentrales Postfach ein, das alle Anfragen bündelt, und automatisieren Terminerinnerungen — damit weniger Aufträge auf der Strecke bleiben.</p>
-          <ul>
-            <li>Mehr Sichtbarkeit online, auch für Kunden, die dich noch nicht kennen</li>
-            <li>Weniger verpasste Anrufe durch zentrales Postfach</li>
-            <li>Automatisierte Terminerinnerungen statt Telefon-Tetris</li>
-          </ul>
-        </div>
-      </div>
+  <div class="branch" data-rise>
+    <div class="branch-head">
+      <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-3-3 2.5-2.5Z"/></svg></span>
+      <h2>Handwerk</h2>
     </div>
-
-    <div class="branch-block" data-reveal>
-      <div class="branch-head">
-        <div class="industry-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6a2 2 0 0 0 2 2v10M7 3v10M11 3v8M17 3c-1.7 1.4-2.5 3-2.5 5.5S15.3 13 17 13v8"/></svg></div>
-        <h2>Gastronomie</h2>
-      </div>
-      <div class="branch-cols">
-        <div>
-          <div class="branch-col-label challenge">⚠ Deine Herausforderungen</div>
-          <ul>
-            <li>Speisekarte online oft veraltet — falsche Preise oder Öffnungszeiten</li>
-            <li>Reservierungen nur telefonisch, gerade zur Stoßzeit schwer erreichbar</li>
-            <li>Social-Media-Präsenz bleibt im stressigen Alltag auf der Strecke</li>
-            <li>Schwer, sich online von der Konkurrenz abzuheben</li>
-          </ul>
-        </div>
-        <div>
-          <div class="branch-col-label solution">✓ So hilft Luxartig</div>
-          <p>Mit einem selbst pflegbaren Website-System, automatisierten Online-Reservierungen und einem aktiv betreuten Social-Media-Auftritt sorgen wir dafür, dass dein Lokal online genauso einladend wirkt wie vor Ort.</p>
-          <ul>
-            <li>Reservierungen automatisch, auch außerhalb der Öffnungszeiten</li>
-            <li>Speisekarte und Öffnungszeiten immer aktuell — in wenigen Minuten gepflegt</li>
-            <li>Starke, gepflegte Social-Media-Präsenz statt verwaistem Profil</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="article-cta" data-reveal>
-      <h3>Deine Branche ist nicht dabei?</h3>
-      <p>Wir betreuen auch andere lokale Betriebe — sprich uns einfach an, wir finden gemeinsam die passende Lösung.</p>
-      <a href="kontakt.html" class="btn btn-accent">Kostenloses Erstgespräch sichern</a>
-    </div>
-
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img src="assets/logo-white.png" alt="Luxartig" class="footer-logo" />
-        <p>Digitale Rundum-Lösungen für Handwerk und Gastronomie. Passau & Umgebung — persönlich, verständlich und ohne Fachjargon.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/luxartig/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="https://www.facebook.com/profile.php?id=61589879194543" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 4h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3Z"/></svg></a>
-          <a href="https://www.tiktok.com/@luxartig" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
+    <div class="branch-cols">
+      <div class="branch-col">
+        <span class="lbl warn">Deine Herausforderungen</span>
         <ul>
-          <li><a href="index.html#leistungen">Leistungen</a></li>
-          <li><a href="index.html#pakete">Pakete & Preise</a></li>
-          <li><a href="branchen.html">Branchen</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="blog/index.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>Kaum Zeit für Website und Online-Marketing neben dem Tagesgeschäft</li>
+          <li>Verpasste Anrufe, während du auf der Baustelle oder unterm Auto bist</li>
+          <li>Veraltete oder gar keine Online-Präsenz — Kunden finden dich nicht</li>
+          <li>Terminabsprachen kosten unnötig viel Zeit am Telefon</li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
+      <div class="branch-col">
+        <span class="lbl good">So hilft Luxartig</span>
+        <p>Wir bauen dir eine Website, die sich leicht selbst pflegen lässt, richten ein zentrales Postfach ein, das alle Anfragen bündelt, und automatisieren Terminerinnerungen — damit weniger Aufträge auf der Strecke bleiben.</p>
         <ul>
-          <li class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:info@luxartig.de">info@luxartig.de</a></li>
-          <li class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 8.284 6.716 15 15 15l1-4-5-2-2 2c-2.5-1.2-4.3-3-5.5-5.5l2-2-2-5-4 1Z"/></svg><a href="tel:+495120153569">0851 20153569</a></li>
-          <li class="row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Am Sportfeld 10, 94121 Salzweg</li>
+          <li>Mehr Sichtbarkeit online, auch für Kunden, die dich noch nicht kennen</li>
+          <li>Weniger verpasste Anrufe durch zentrales Postfach</li>
+          <li>Automatisierte Terminerinnerungen statt Telefon-Tetris</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span data-year></span> Luxartig. Alle Rechte vorbehalten.</span>
-      <div class="footer-legal">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="agb.html">AGB</a>
-        <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
+  </div>
+
+  <div class="branch" data-rise>
+    <div class="branch-head">
+      <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v6a2 2 0 0 0 2 2v10M7 3v10M11 3v8M17 3c-1.7 1.4-2.5 3-2.5 5.5S15.3 13 17 13v8"/></svg></span>
+      <h2>Gastronomie</h2>
+    </div>
+    <div class="branch-cols">
+      <div class="branch-col">
+        <span class="lbl warn">Deine Herausforderungen</span>
+        <ul>
+          <li>Speisekarte online oft veraltet — falsche Preise oder Öffnungszeiten</li>
+          <li>Reservierungen nur telefonisch, gerade zur Stoßzeit schwer erreichbar</li>
+          <li>Social-Media-Präsenz bleibt im stressigen Alltag auf der Strecke</li>
+          <li>Schwer, sich online von der Konkurrenz abzuheben</li>
+        </ul>
+      </div>
+      <div class="branch-col">
+        <span class="lbl good">So hilft Luxartig</span>
+        <p>Mit einem selbst pflegbaren Website-System, automatisierten Online-Reservierungen und einem aktiv betreuten Social-Media-Auftritt sorgen wir dafür, dass dein Lokal online genauso einladend wirkt wie vor Ort.</p>
+        <ul>
+          <li>Reservierungen automatisch, auch außerhalb der Öffnungszeiten</li>
+          <li>Speisekarte und Öffnungszeiten immer aktuell — in wenigen Minuten gepflegt</li>
+          <li>Starke, gepflegte Social-Media-Präsenz statt verwaistem Profil</li>
+        </ul>
       </div>
     </div>
+  </div>
+
+  <div class="panel" style="margin-top:56px;text-align:center;" data-rise>
+    <h3>Deine Branche ist nicht dabei?</h3>
+    <p style="margin-inline:auto;max-width:52ch;">Wir betreuen auch andere lokale Betriebe — sprich uns einfach an, wir finden gemeinsam die passende Lösung.</p>
+    <a href="kontakt.html" class="btn btn-fill">Kostenloses Erstgespräch sichern</a>
+  </div>
+
+</section>
+
+<footer class="ft">
+  <span>© <span data-year></span> Luxartig · Am Sportfeld 10, 94121 Salzweg</span>
+  <div class="ft-soc">
+    <a href="https://www.instagram.com/luxartig/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+    <a href="https://www.facebook.com/profile.php?id=61589879194543" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 4h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3Z"/></svg></a>
+    <a href="https://www.tiktok.com/@luxartig" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></a>
+  </div>
+  <div class="ft-links">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+    <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
   </div>
 </footer>
 
@@ -163,13 +133,15 @@
   <div class="cookie-banner-inner">
     <p>Wir nutzen Cookies nur, wenn du externe Dienste wie den Chat oder die Kalenderbuchung aktivierst. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
     <div class="cookie-banner-actions">
-      <button type="button" class="btn btn-ghost btn-sm" data-cookie-necessary>Nur notwendige</button>
-      <button type="button" class="btn btn-accent btn-sm" data-cookie-accept>Alle akzeptieren</button>
+      <button type="button" class="btn btn-ghost" data-cookie-necessary>Nur notwendige</button>
+      <button type="button" class="btn btn-fill" data-cookie-accept>Alle akzeptieren</button>
     </div>
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/experience.js"></script>
 <script src="js/cookie-consent.js"></script>
 
 </body>
