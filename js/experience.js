@@ -163,8 +163,12 @@
 
     // Land on the last cell straight away; the roll is the animation back
     // from the top, added only once the cell is on screen.
+    //
+    // Offset in `em`, never in `%`: a percentage translate resolves against
+    // the strip's own full height (all 21 digits), not one digit, which threw
+    // the number thousands of pixels out of its window and left it blank.
     const settle = () => cols.forEach(({ strip, total }) => {
-      strip.style.transform = `translateY(${-(total - 1) * 100}%)`
+      strip.style.transform = `translateY(-${total - 1}em)`
     })
     const roll = () => {
       cols.forEach(({ strip }, i) => {

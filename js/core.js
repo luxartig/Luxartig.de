@@ -76,6 +76,19 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
     P.last = performance.now()
   }, { passive: true })
 
+  // Tilt is tracked separately from the repel pointer and listens to
+  // `pointermove`, so a finger on a phone drives the logo exactly like a
+  // mouse does — `mousemove` alone never fires on touch, which is why the
+  // logo sat perfectly flat on mobile.
+  const TILT = { x: 0, y: 0, tx: 0, ty: 0, touched: false }
+  window.addEventListener('pointermove', (e) => {
+    const r = canvas.getBoundingClientRect()
+    if (!r.width || !r.height) return
+    TILT.tx = ((e.clientX - r.left) / r.width) * 2 - 1
+    TILT.ty = -(((e.clientY - r.top) / r.height) * 2 - 1)
+    if (e.pointerType !== 'mouse') TILT.touched = true
+  }, { passive: true })
+
   const _n = new THREE.Vector3(), _dv = new THREE.Vector3(), _t = new THREE.Vector3()
   function pointer() {
     _t.set(0, 0, 0)
@@ -200,7 +213,10 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
 
   // ---- the logo, extruded ------------------------------------------------
   const LOGO_ASPECT = 2.188
-  const LAYERS = SMALL ? 7 : 12
+  // Phones need MORE layers, not fewer: the mark is smaller on screen, so the
+  // extrusion has fewer pixels to read in.
+  const LAYERS = SMALL ? 14 : 12
+  const LAYER_STEP = SMALL ? 0.0105 : 0.0075
   const logo = new THREE.Group()
   scene.add(logo)
   const logoMats = []
@@ -222,7 +238,7 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
         color: new THREE.Color().setHSL(0.49, 0.62, 0.09 + (1 - k) * 0.24),
       })
       const mesh = new THREE.Mesh(planeGeo, m)
-      mesh.position.z = -i * 0.0075
+      mesh.position.z = -i * LAYER_STEP
       mesh.renderOrder = 1
       logoMats.push(m)
       logo.add(mesh)
@@ -407,8 +423,19 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
       const a = intro * Math.pow(1 - outL, 1.8)
       logo.visible = a > 0.004
       logo.position.z = outL * 3.4
-      logo.rotation.y = (REDUCED ? 0 : P.ndc.x * 0.3) + outL * 0.3
-      logo.rotation.x = (REDUCED ? 0 : -P.ndc.y * 0.2) + Math.sin(t * 0.6) * 0.025
+
+      TILT.x += (TILT.tx - TILT.x) * 0.07
+      TILT.y += (TILT.ty - TILT.y) * 0.07
+
+      // A short automatic sweep on load so the depth is obvious immediately,
+      // including on touch devices where nothing hovers. It fades out and
+      // hands over to the finger/cursor.
+      const age = (now - born) / 1000
+      const sweep = REDUCED ? 0 : Math.max(0, 1 - age / 2.8)
+      const auto = Math.sin(age * 2.1) * 0.5 * sweep * sweep
+
+      logo.rotation.y = (REDUCED ? 0 : TILT.x * 0.34) + auto + outL * 0.3
+      logo.rotation.x = (REDUCED ? 0 : -TILT.y * 0.2) + Math.cos(age * 1.7) * 0.16 * sweep * sweep + Math.sin(t * 0.6) * 0.025
       logoMats.forEach((m) => { m.opacity = a })
     }
 

@@ -802,6 +802,38 @@ body.cur-hot .cur {
 .tal-v { color: var(--fg); font-weight: 700; letter-spacing: .12em; }
 .tal-v.acc { color: var(--accent); }
 
+/* the two "we came from your trade" panels */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: clamp(40px, 6vw, 64px);
+}
+.exp-cell {
+  background: var(--bg);
+  padding: clamp(24px, 3vw, 34px);
+}
+.exp-cell .k {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.exp-cell h3 {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: clamp(19px, 2.3vw, 27px);
+  line-height: 1.18;
+  letter-spacing: -.03em;
+  margin-bottom: 14px;
+}
+.exp-cell p { font-size: 14px; line-height: 1.72; color: var(--dim); }
+
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
