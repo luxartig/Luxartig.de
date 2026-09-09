@@ -54,6 +54,19 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
   color: var(--lfg);
 }
 
+/* The Leistungen chapter uses the brand's own navy instead of the light
+   cream, so it stays a "dark" chapter (header/HUD keep their light-on-dark
+   colouring — no [data-light] here). */
+[data-navy] {
+  --bg:   #081a44;
+  --fg:   #f2f3f7;
+  --dim:  #9aa6c8;
+  --line: rgba(242, 243, 247, .16);
+  --soft: rgba(242, 243, 247, .05);
+  background: #081a44;
+  color: #f2f3f7;
+}
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -445,7 +458,7 @@ body.cur-hot .cur {
   width: 60vmax; height: 60vmax;
   margin: -30vmax 0 0 -30vmax;
   border-radius: 50%;
-  background: var(--lbg);
+  background: #081a44;
   transform: scale(0);
   will-change: transform;
 }
@@ -704,42 +717,28 @@ body.cur-hot .cur {
 .dio.is-on .d-blocks i:nth-child(4) { animation-delay: 1.45s; height: 26px; width: 40%; background: rgba(25,179,176,.4); }
 @keyframes growY { to { transform: scaleY(1); } }
 
-/* d4 — digital business card */
-.d-card {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 14px;
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(10px);
+/* d4 — digital business card: a real, live preview of the card itself,
+   not a mockup, so visitors see exactly what it looks like. */
+.dio-body--live { padding: 0; overflow: hidden; }
+.d-card-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0 0 13px 13px;
+  background: #0b1220;
 }
-.dio.is-on .d-card { animation: pop .55s var(--easeO) .5s forwards; }
-.d-qr {
-  width: 62px; height: 62px;
-  flex: 0 0 auto;
-  border-radius: 6px;
-  background-image:
-    linear-gradient(90deg, var(--fg) 2px, transparent 2px),
-    linear-gradient(0deg, var(--fg) 2px, transparent 2px);
-  background-size: 8px 8px;
-  opacity: .55;
+.d-card-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* the live card fills the preview window; it's a look-and-feel preview,
+     not meant to be operated inside this small frame */
+  pointer-events: none;
 }
-.d-card-lines i { display: block; height: 7px; border-radius: 3px; background: var(--line); margin-bottom: 7px; }
-.d-card-lines i:nth-child(1) { width: 84px; background: var(--accent); opacity: .7; }
-.d-card-lines i:nth-child(2) { width: 108px; }
-.d-card-lines i:nth-child(3) { width: 66px; }
-.d-tap {
-  margin-top: 14px;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--dim);
-  opacity: 0;
-}
-.dio.is-on .d-tap { animation: pop .5s var(--easeO) 1.3s forwards; }
+.dio-body--live .dio-chip { z-index: 1; }
+
 
 /* d5 — automation chat */
 .d-msg {
