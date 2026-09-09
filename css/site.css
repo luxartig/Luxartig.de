@@ -490,13 +490,32 @@ body.cur-hot .cur {
   grid-template-columns: 56px 1fr 40px;
   gap: 18px;
   align-items: start;
-  padding: 26px 4px;
+  padding: 26px 16px;
+  margin: 0 -16px;
   border-top: 1px solid var(--line);
   cursor: pointer;
-  transition: padding-left .55s var(--easeO), background .5s var(--easeO);
+  overflow: hidden;
+  transition: padding-left .55s var(--easeO);
 }
 .srow:last-child { border-bottom: 1px solid var(--line); }
-.srow:hover, .srow.is-active { padding-left: 16px; }
+.srow:hover, .srow.is-active { padding-left: 28px; }
+
+/* the row "charges up" with the brand navy on hover, like current
+   surging through a circuit — sweeping in from the left. */
+.srow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #081a44;
+  box-shadow: inset 0 0 34px rgba(95, 232, 233, .28);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .5s var(--easeO);
+  z-index: 0;
+}
+.srow:hover::before, .srow.is-active::before { transform: scaleX(1); }
+
+.srow-idx, .srow-arr, .srow > div { position: relative; z-index: 1; }
 
 .srow-idx {
   font-family: var(--mono);
@@ -506,7 +525,7 @@ body.cur-hot .cur {
   padding-top: 9px;
   transition: color .4s var(--easeO);
 }
-.srow.is-active .srow-idx { color: var(--row-accent, var(--accent)); }
+.srow:hover .srow-idx, .srow.is-active .srow-idx { color: var(--accent2); }
 
 .srow-t {
   font-family: var(--disp);
@@ -517,14 +536,16 @@ body.cur-hot .cur {
   text-transform: uppercase;
   transition: color .4s var(--easeO);
 }
-/* each row can set its own --row-accent inline; rows that don't fall back
-   to the shared teal accent */
-.srow:hover .srow-t, .srow.is-active .srow-t { color: var(--row-accent, var(--accent)); }
+.srow:hover .srow-t, .srow.is-active .srow-t { color: #f5f6fa; }
+
 .srow-s {
   margin-top: 8px;
   font-size: 13px;
   color: var(--dim);
+  transition: color .4s var(--easeO);
 }
+.srow:hover .srow-s, .srow.is-active .srow-s { color: rgba(245, 246, 250, .72); }
+
 .srow-tags {
   display: flex;
   flex-wrap: wrap;
@@ -541,7 +562,13 @@ body.cur-hot .cur {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 4px 10px;
+  transition: color .4s var(--easeO), border-color .4s var(--easeO);
 }
+.srow:hover .srow-tags em, .srow.is-active .srow-tags em {
+  color: var(--accent2);
+  border-color: rgba(95, 232, 233, .4);
+}
+
 .srow-arr {
   font-size: 20px;
   color: var(--dim);
@@ -549,7 +576,7 @@ body.cur-hot .cur {
   justify-self: end;
   transition: transform .55s var(--easeO), color .4s var(--easeO);
 }
-.srow:hover .srow-arr, .srow.is-active .srow-arr { transform: translateX(6px); color: var(--row-accent, var(--accent)); }
+.srow:hover .srow-arr, .srow.is-active .srow-arr { transform: translateX(6px); color: var(--accent2); }
 
 /* Desktop: a sticky "stage" on the right shows the active diorama */
 .dio-stage { display: none; }
@@ -707,27 +734,50 @@ body.cur-hot .cur {
 .dio.is-on .d-blocks i:nth-child(4) { animation-delay: 1.45s; height: 26px; width: 40%; background: rgba(25,179,176,.4); }
 @keyframes growY { to { transform: scaleY(1); } }
 
-/* d4 — digital business card: a real, live preview of the card itself,
-   not a mockup, so visitors see exactly what it looks like. */
-.dio-body--live { padding: 0; overflow: hidden; }
-.d-card-frame {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 0 0 13px 13px;
-  background: #0b1220;
+/* d4 — digital business card */
+.d-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
 }
-.d-card-frame iframe {
-  position: absolute;
-  inset: 0;
+.dio.is-on .d-card { animation: pop .55s var(--easeO) .5s forwards; }
+.d-qr {
+  width: 62px; height: 62px;
+  flex: 0 0 auto;
+  border-radius: 6px;
+  background-image:
+    linear-gradient(90deg, var(--fg) 2px, transparent 2px),
+    linear-gradient(0deg, var(--fg) 2px, transparent 2px);
+  background-size: 8px 8px;
+  opacity: .55;
+}
+.d-card-lines i { display: block; height: 7px; border-radius: 3px; background: var(--line); margin-bottom: 7px; }
+.d-card-lines i:nth-child(1) { width: 84px; background: var(--accent); opacity: .7; }
+.d-card-lines i:nth-child(2) { width: 108px; }
+.d-card-lines i:nth-child(3) { width: 66px; }
+.d-save-btn {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  border: 0;
-  /* the live card fills the preview window; it's a look-and-feel preview,
-     not meant to be operated inside this small frame */
-  pointer-events: none;
+  background: var(--accent);
+  color: #04100f;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  border-radius: 999px;
+  padding: 10px 0;
+  opacity: 0;
+  transform: translateY(8px);
 }
-.dio-body--live .dio-chip { z-index: 1; }
+.dio.is-on .d-save-btn { animation: pop .5s var(--easeO) .9s forwards; }
 
 
 /* d5 — automation chat */

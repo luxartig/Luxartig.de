@@ -244,9 +244,9 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
       logo.add(mesh)
     }
 
-    // Front face reads solid black; the teal depth layers behind it (the
-    // "blue edges" of the extrusion) are untouched.
-    const front = new THREE.MeshBasicMaterial({ map: tex, color: 0x000000, transparent: true, depthWrite: false })
+    // Front face reads as the brand navy; the teal depth layers behind it
+    // (the "blue edges" of the extrusion) are untouched.
+    const front = new THREE.MeshBasicMaterial({ map: tex, color: 0x081a44, transparent: true, depthWrite: false })
     const frontMesh = new THREE.Mesh(planeGeo, front)
     frontMesh.renderOrder = 2
     logoMats.push(front)
