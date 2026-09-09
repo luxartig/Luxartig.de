@@ -54,19 +54,6 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
   color: var(--lfg);
 }
 
-/* The Leistungen chapter uses the brand's own navy instead of the light
-   cream, so it stays a "dark" chapter (header/HUD keep their light-on-dark
-   colouring — no [data-light] here). */
-[data-navy] {
-  --bg:   #081a44;
-  --fg:   #f2f3f7;
-  --dim:  #9aa6c8;
-  --line: rgba(242, 243, 247, .16);
-  --soft: rgba(242, 243, 247, .05);
-  background: #081a44;
-  color: #f2f3f7;
-}
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -458,7 +445,7 @@ body.cur-hot .cur {
   width: 60vmax; height: 60vmax;
   margin: -30vmax 0 0 -30vmax;
   border-radius: 50%;
-  background: #081a44;
+  background: var(--lbg);
   transform: scale(0);
   will-change: transform;
 }
@@ -519,7 +506,7 @@ body.cur-hot .cur {
   padding-top: 9px;
   transition: color .4s var(--easeO);
 }
-.srow.is-active .srow-idx { color: var(--accent); }
+.srow.is-active .srow-idx { color: var(--row-accent, var(--accent)); }
 
 .srow-t {
   font-family: var(--disp);
@@ -530,6 +517,9 @@ body.cur-hot .cur {
   text-transform: uppercase;
   transition: color .4s var(--easeO);
 }
+/* each row can set its own --row-accent inline; rows that don't fall back
+   to the shared teal accent */
+.srow:hover .srow-t, .srow.is-active .srow-t { color: var(--row-accent, var(--accent)); }
 .srow-s {
   margin-top: 8px;
   font-size: 13px;
@@ -559,7 +549,7 @@ body.cur-hot .cur {
   justify-self: end;
   transition: transform .55s var(--easeO), color .4s var(--easeO);
 }
-.srow:hover .srow-arr, .srow.is-active .srow-arr { transform: translateX(6px); color: var(--accent); }
+.srow:hover .srow-arr, .srow.is-active .srow-arr { transform: translateX(6px); color: var(--row-accent, var(--accent)); }
 
 /* Desktop: a sticky "stage" on the right shows the active diorama */
 .dio-stage { display: none; }
