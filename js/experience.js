@@ -429,7 +429,7 @@
         })
         const json = await res.json()
         if (!json.success) throw new Error(json.message || 'Unbekannter Fehler')
-        statusEl.textContent = 'Danke! Deine Nachricht ist angekommen — wir melden uns meist innerhalb von 24 Stunden an Werktagen.'
+        statusEl.textContent = 'Danke! Deine Nachricht ist angekommen. Wir melden uns meist innerhalb von 24 Stunden an Werktagen.'
         statusEl.classList.add('is-visible', 'ok')
         form.reset()
       } catch (err) {

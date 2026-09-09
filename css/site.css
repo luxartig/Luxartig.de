@@ -881,6 +881,10 @@ body.cur-hot .cur {
   height: 1em;
   overflow: hidden;
   line-height: 1;
+  /* every column is as wide as the widest digit (e.g. "0"), so a narrow
+     glyph like "1" must be centred in it — left-aligned, it left a gap of
+     empty space after it that read as a stray space before the next digit */
+  text-align: center;
 }
 .odo-d b {
   display: block;
