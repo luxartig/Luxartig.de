@@ -269,9 +269,11 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
   // ---- the sentence, made of particles -----------------------------------
   const HERO_LANG = (document.documentElement.lang || 'de').slice(0, 2)
   const HERO_TEXT = {
-    de: { lines: ['Lass uns deinen', 'Auftritt bauen'], font: `'Inter Tight', 'Inter', system-ui, sans-serif` },
-    en: { lines: ["Let's build your", 'digital presence'], font: `'Inter Tight', 'Inter', system-ui, sans-serif` },
-    ar: { lines: ['دعنا نبني', 'حضورك الرقمي'], font: `'Cairo', 'Inter Tight', system-ui, sans-serif` },
+    de: { lines: ['Lass uns deinen', 'Auftritt bauen'], font: `'Inter Tight', 'Inter', system-ui, sans-serif`, lineH: 1.02, yOff: 0.16 },
+    en: { lines: ["Let's build your", 'digital presence'], font: `'Inter Tight', 'Inter', system-ui, sans-serif`, lineH: 1.02, yOff: 0.16 },
+    // Cairo's diacritic dots and descenders need much more vertical room than
+    // the Latin faces, or the two lines sample into one overlapping blob.
+    ar: { lines: ['دعنا نبني', 'حضورك الرقمي'], font: `'Cairo', 'Inter Tight', system-ui, sans-serif`, lineH: 1.55, yOff: 0 },
   }
   const HT = HERO_TEXT[HERO_LANG] || HERO_TEXT.de
   const TEXT_LINES = HT.lines
@@ -286,9 +288,9 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
   function buildText() {
     const c = document.createElement('canvas')
     const fs = 190
-    const lineH = fs * 1.02
+    const lineH = fs * (HT.lineH || 1.02)
     c.width = TEXT_W
-    c.height = Math.ceil(lineH * TEXT_LINES.length + fs * 0.35)
+    c.height = Math.ceil(lineH * TEXT_LINES.length + fs * 0.5)
     const ctx = c.getContext('2d')
     ctx.fillStyle = '#fff'
     ctx.textAlign = 'center'
@@ -305,7 +307,7 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
     }
 
     TEXT_LINES.forEach((line, i) => {
-      ctx.fillText(line, c.width / 2, (i + 0.5) * lineH + fs * 0.16)
+      ctx.fillText(line, c.width / 2, (i + 0.5) * lineH + fs * (HT.yOff ?? 0.16))
     })
 
     const img = ctx.getImageData(0, 0, c.width, c.height).data

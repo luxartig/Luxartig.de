@@ -1871,3 +1871,27 @@ a.info-link:hover .v { color: var(--accent2); }
 [dir="rtl"] .branch-col li { padding-left: 0; padding-right: 20px; }
 [dir="rtl"] .prose li::before,
 [dir="rtl"] .branch-col li::before { left: auto; right: 2px; }
+
+/* The big display headings are tuned for tight, negative-tracking Latin
+   caps. Cairo's diacritic dots and descenders need real line-height, or
+   they get crowded against the next line (or, on rows with overflow:
+   hidden, clipped outright) — and negative letter-spacing crowds Arabic's
+   cursive joining strokes into each other instead of just tightening gaps
+   the way it does for Latin. */
+[dir="rtl"] h2.big,
+[dir="rtl"] .srow-t,
+[dir="rtl"] .portal-word,
+[dir="rtl"] .spot-big,
+[dir="rtl"] .arrive-head,
+[dir="rtl"] .page-top h1,
+[dir="rtl"] .mq-item,
+[dir="rtl"] .wm {
+  letter-spacing: normal;
+}
+[dir="rtl"] h2.big { line-height: 1.4; }
+[dir="rtl"] .srow-t { line-height: 1.5; }
+[dir="rtl"] .portal-word { line-height: 1.25; }
+[dir="rtl"] .spot-big { line-height: 1.35; }
+[dir="rtl"] .arrive-head { line-height: 1.4; }
+[dir="rtl"] .page-top h1 { line-height: 1.35; }
+[dir="rtl"] .mq-item { line-height: 1.3; }
