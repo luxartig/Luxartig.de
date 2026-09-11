@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://luxartig.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/kontakt.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/kontakt.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/kontakt.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/kontakt.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/kontakt.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/kontakt.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/kontakt.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/branchen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/branchen.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/branchen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/branchen.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/branchen.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/branchen.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/branchen.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/website-oder-onlineshop.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/website-oder-onlineshop.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/website-oder-onlineshop.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/website-oder-onlineshop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/website-oder-onlineshop.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/branding-startup-paket.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/branding-startup-paket.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/branding-startup-paket.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/branding-startup-paket.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/branding-startup-paket.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/branding-startup-paket.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/branding-startup-paket.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/sichtbarkeit-google-business-social-media.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/sichtbarkeit-google-business-social-media.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/sichtbarkeit-google-business-social-media.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/sichtbarkeit-google-business-social-media.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/automatisierung-handwerk.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/automatisierung-handwerk.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/automatisierung-handwerk.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/automatisierung-handwerk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/automatisierung-handwerk.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/digital-marketing-gastronomie.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/digital-marketing-gastronomie.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/digital-marketing-gastronomie.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/digital-marketing-gastronomie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/digital-marketing-gastronomie.html" />
+  </url>
+
+  <url>
+    <loc>https://luxartig.de/blog/persoenlicher-ansprechpartner.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/blog/persoenlicher-ansprechpartner.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/blog/persoenlicher-ansprechpartner.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/persoenlicher-ansprechpartner.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/persoenlicher-ansprechpartner.html" />
+  </url>
+
+</urlset>

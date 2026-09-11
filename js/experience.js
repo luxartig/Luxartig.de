@@ -376,6 +376,49 @@
     const statusEl = $('[data-form-status]', form)
     const WEB3FORMS_ACCESS_KEY = 'b44bb61c-45ac-4bf5-8669-89d6aa9a4fc3'
 
+    // Every visitor-facing string the form can show, keyed by <html lang>.
+    // Falls back to German for any language not listed here.
+    const LANG = (document.documentElement.lang || 'de').slice(0, 2)
+    const STR = {
+      de: {
+        name: 'Bitte gib deinen Namen an.',
+        email: 'Bitte gib eine gültige E-Mail-Adresse an.',
+        telefon: 'Bitte gib deine Telefonnummer an.',
+        branche: 'Bitte wähle deine Branche.',
+        checkFields: 'Bitte prüfe deine Angaben.',
+        mailApp: 'Dein E-Mail-Programm öffnet sich gleich mit deiner Anfrage. Alternativ erreichst du uns direkt unter info@luxartig.de.',
+        success: 'Danke! Deine Nachricht ist angekommen. Wir melden uns meist innerhalb von 24 Stunden an Werktagen.',
+        subject: (n) => `Anfrage über die Website: ${n}`,
+        mailLabels: { name: 'Name', email: 'E-Mail', telefon: 'Telefon', branche: 'Branche', nachricht: 'Nachricht' },
+        dash: '–', unknownError: 'Unbekannter Fehler',
+      },
+      en: {
+        name: 'Please enter your name.',
+        email: 'Please enter a valid email address.',
+        telefon: 'Please enter your phone number.',
+        branche: 'Please choose your industry.',
+        checkFields: 'Please check your details.',
+        mailApp: 'Your email app is about to open with your message. You can also reach us directly at info@luxartig.de.',
+        success: 'Thanks! Your message has arrived. We usually reply within 24 hours on business days.',
+        subject: (n) => `Website inquiry: ${n}`,
+        mailLabels: { name: 'Name', email: 'Email', telefon: 'Phone', branche: 'Industry', nachricht: 'Message' },
+        dash: '–', unknownError: 'Unknown error',
+      },
+      ar: {
+        name: 'الرجاء إدخال اسمك.',
+        email: 'الرجاء إدخال بريد إلكتروني صالح.',
+        telefon: 'الرجاء إدخال رقم هاتفك.',
+        branche: 'الرجاء اختيار مجال عملك.',
+        checkFields: 'يرجى مراجعة بياناتك.',
+        mailApp: 'سيفتح برنامج البريد الإلكتروني لديك الآن برسالتك. يمكنك أيضًا التواصل معنا مباشرة عبر info@luxartig.de.',
+        success: 'شكرًا لك! وصلت رسالتك إلينا. عادةً ما نرد خلال 24 ساعة في أيام العمل.',
+        subject: (n) => `استفسار من الموقع: ${n}`,
+        mailLabels: { name: 'الاسم', email: 'البريد الإلكتروني', telefon: 'الهاتف', branche: 'المجال', nachricht: 'الرسالة' },
+        dash: '–', unknownError: 'خطأ غير معروف',
+      },
+    }
+    const T = STR[LANG] || STR.de
+
     const setError = (field, message) => {
       const wrap = field.closest('.field')
       wrap.classList.toggle('has-error', Boolean(message))
@@ -387,21 +430,22 @@
       let ok = true
       const name = $('#name', form), email = $('#email', form)
       const telefon = $('#telefon', form), branche = $('#branche', form)
-      if (!name.value.trim()) { setError(name, 'Bitte gib deinen Namen an.'); ok = false } else setError(name, '')
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setError(email, 'Bitte gib eine gültige E-Mail-Adresse an.'); ok = false } else setError(email, '')
-      if (!telefon.value.trim()) { setError(telefon, 'Bitte gib deine Telefonnummer an.'); ok = false } else setError(telefon, '')
-      if (!branche.value) { setError(branche, 'Bitte wähle deine Branche.'); ok = false } else setError(branche, '')
+      if (!name.value.trim()) { setError(name, T.name); ok = false } else setError(name, '')
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setError(email, T.email); ok = false } else setError(email, '')
+      if (!telefon.value.trim()) { setError(telefon, T.telefon); ok = false } else setError(telefon, '')
+      if (!branche.value) { setError(branche, T.branche); ok = false } else setError(branche, '')
       return ok
     }
 
     function mailtoFallback(data) {
-      const subject = encodeURIComponent(`Anfrage über die Website – ${data.name}`)
+      const L = T.mailLabels
+      const subject = encodeURIComponent(T.subject(data.name))
       const body = encodeURIComponent([
-        `Name: ${data.name}`, `E-Mail: ${data.email}`, `Telefon: ${data.telefon}`,
-        `Branche: ${data.branche}`, '', 'Nachricht:', data.nachricht || '–',
+        `${L.name}: ${data.name}`, `${L.email}: ${data.email}`, `${L.telefon}: ${data.telefon}`,
+        `${L.branche}: ${data.branche}`, '', `${L.nachricht}:`, data.nachricht || T.dash,
       ].join('\n'))
       window.location.href = `mailto:info@luxartig.de?subject=${subject}&body=${body}`
-      statusEl.textContent = 'Dein E-Mail-Programm öffnet sich gleich mit deiner Anfrage. Alternativ erreichst du uns direkt unter info@luxartig.de.'
+      statusEl.textContent = T.mailApp
       statusEl.classList.add('is-visible', 'ok')
     }
 
@@ -409,7 +453,7 @@
       e.preventDefault()
       statusEl.classList.remove('is-visible', 'ok', 'err')
       if (!validate()) {
-        statusEl.textContent = 'Bitte prüfe deine Angaben.'
+        statusEl.textContent = T.checkFields
         statusEl.classList.add('is-visible', 'err')
         return
       }
@@ -422,14 +466,14 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
             access_key: WEB3FORMS_ACCESS_KEY,
-            subject: `Anfrage über die Website – ${data.name}`,
+            subject: T.subject(data.name),
             name: data.name, email: data.email, telefon: data.telefon,
-            branche: data.branche, nachricht: data.nachricht || '–',
+            branche: data.branche, nachricht: data.nachricht || T.dash,
           }),
         })
         const json = await res.json()
-        if (!json.success) throw new Error(json.message || 'Unbekannter Fehler')
-        statusEl.textContent = 'Danke! Deine Nachricht ist angekommen. Wir melden uns meist innerhalb von 24 Stunden an Werktagen.'
+        if (!json.success) throw new Error(json.message || T.unknownError)
+        statusEl.textContent = T.success
         statusEl.classList.add('is-visible', 'ok')
         form.reset()
       } catch (err) {

@@ -222,7 +222,7 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
   const logoMats = []
   let logoReady = false
 
-  new THREE.TextureLoader().load('assets/logo-hero.png', (tex) => {
+  new THREE.TextureLoader().load('/assets/logo-hero.png', (tex) => {
     tex.minFilter = THREE.LinearFilter
     tex.generateMipmaps = false
     const planeGeo = new THREE.PlaneGeometry(1, 1 / LOGO_ASPECT)
@@ -244,9 +244,10 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
       logo.add(mesh)
     }
 
-    // Front face reads as the brand navy; the teal depth layers behind it
-    // (the "blue edges" of the extrusion) are untouched.
-    const front = new THREE.MeshBasicMaterial({ map: tex, color: 0x081a44, transparent: true, depthWrite: false })
+    // Front face reads off-white/cream, matching the site's --fg token; the
+    // teal depth layers behind it (the "blue edges" of the extrusion) are
+    // untouched.
+    const front = new THREE.MeshBasicMaterial({ map: tex, color: 0xedece6, transparent: true, depthWrite: false })
     const frontMesh = new THREE.Mesh(planeGeo, front)
     frontMesh.renderOrder = 2
     logoMats.push(front)
@@ -266,7 +267,14 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
   }
 
   // ---- the sentence, made of particles -----------------------------------
-  const TEXT_LINES = ['Lass uns deinen', 'Auftritt bauen']
+  const HERO_LANG = (document.documentElement.lang || 'de').slice(0, 2)
+  const HERO_TEXT = {
+    de: { lines: ['Lass uns deinen', 'Auftritt bauen'], font: `'Inter Tight', 'Inter', system-ui, sans-serif` },
+    en: { lines: ["Let's build your", 'digital presence'], font: `'Inter Tight', 'Inter', system-ui, sans-serif` },
+    ar: { lines: ['دعنا نبني', 'حضورك الرقمي'], font: `'Cairo', 'Inter Tight', system-ui, sans-serif` },
+  }
+  const HT = HERO_TEXT[HERO_LANG] || HERO_TEXT.de
+  const TEXT_LINES = HT.lines
   const TEXT_W = 1400
   let textPoints = null
   const textUniforms = {
@@ -285,14 +293,15 @@ if (canvas && heroSec && window.WebGLRenderingContext) {
     ctx.fillStyle = '#fff'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
+    if (HERO_LANG === 'ar') ctx.direction = 'rtl'
 
     // Shrink to fit so the sentence never runs off the sampling canvas.
     let size = fs
-    ctx.font = `900 ${size}px 'Inter Tight', 'Inter', system-ui, sans-serif`
+    ctx.font = `900 ${size}px ${HT.font}`
     const widest = Math.max(...TEXT_LINES.map((l) => ctx.measureText(l).width))
     if (widest > TEXT_W * 0.96) {
       size = Math.floor(size * (TEXT_W * 0.96) / widest)
-      ctx.font = `900 ${size}px 'Inter Tight', 'Inter', system-ui, sans-serif`
+      ctx.font = `900 ${size}px ${HT.font}`
     }
 
     TEXT_LINES.forEach((line, i) => {

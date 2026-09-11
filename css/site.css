@@ -179,6 +179,23 @@ body.is-light .hd { color: var(--lfg); }
 .hd-logo img { width: 20px; height: 20px; object-fit: contain; }
 
 .hd-right { display: flex; align-items: center; gap: 22px; }
+
+.hd-lang {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  font-weight: 700;
+}
+.hd-lang a { color: var(--dim); transition: color .3s var(--easeO); }
+.hd-lang a:hover { color: var(--fg); }
+.hd-lang a.is-on { color: var(--accent); }
+body.is-light .hd-lang a { color: var(--ldim); }
+body.is-light .hd-lang a:hover { color: var(--lfg); }
+.hd-lang i { width: 1px; height: 10px; background: currentColor; opacity: .25; font-style: normal; }
+@media (max-width: 460px) { .hd-lang { display: none; } }
 .hd-clock {
   font-family: var(--mono);
   font-size: 10.5px;
@@ -1799,3 +1816,58 @@ a.info-link:hover .v { color: var(--accent2); }
   .arrive-grid { grid-template-columns: 1fr; }
 
 }
+
+/* ==========================================================================
+   RTL (Arabic)
+   Flexbox rows and CSS Grid tracks already mirror themselves under
+   dir="rtl" — the header, footer, service-row grid and two-column layouts
+   need nothing here. This block only covers the handful of rules that use
+   physical left/right positioning or a directional sweep/slide animation,
+   where "mirror the whole box" isn't automatic. Arrow glyphs (→ / ←) are
+   flipped in the Arabic HTML content itself, not here.
+   ========================================================================== */
+[dir="rtl"] {
+  /* body/headings pull their font through these tokens (see body{} and
+     h2.big{} etc.), so overriding the tokens reaches every component —
+     a blanket font-family on the root would not, since body and every
+     heading already set their own explicit font-family. */
+  --body: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+  --disp: 'Cairo', 'Inter Tight', 'Inter', system-ui, sans-serif;
+}
+[dir="rtl"] .mono,
+[dir="rtl"] .sg,
+[dir="rtl"] .tag,
+[dir="rtl"] .hd-clock,
+[dir="rtl"] .hd-city,
+[dir="rtl"] .menu-btn,
+[dir="rtl"] .hud,
+[dir="rtl"] .globe-hud,
+[dir="rtl"] .article-meta,
+[dir="rtl"] .back-link {
+  /* timestamps, coordinates and Latin-brand micro-labels read left-to-right
+     even inside an RTL page */
+  font-family: var(--mono);
+}
+
+[dir="rtl"] .hud { left: auto; right: var(--pad); }
+[dir="rtl"] .globe-hud { left: auto; right: var(--pad); }
+[dir="rtl"] .wm { right: auto; left: var(--pad); }
+[dir="rtl"] .dio-chip { left: auto; right: 16px; }
+
+[dir="rtl"] .why-line { transform-origin: 100% 50%; }
+[dir="rtl"] .srow::before { transform-origin: 100% 50%; }
+[dir="rtl"] .srow:hover, [dir="rtl"] .srow.is-active { padding-left: 16px; padding-right: 28px; }
+[dir="rtl"] .srow:hover .srow-arr, [dir="rtl"] .srow.is-active .srow-arr { transform: translateX(-6px); }
+[dir="rtl"] .bcard:hover .m .go { transform: translateX(-5px); }
+[dir="rtl"] .scroll-hint i { transform-origin: 100% 50%; }
+
+[dir="rtl"] .menu-list a:hover { padding-left: 0; padding-right: 18px; }
+
+[dir="rtl"] .faq summary { padding: 22px 0 22px 40px; }
+[dir="rtl"] .faq summary::after,
+[dir="rtl"] .faq summary::before { right: auto; left: 6px; }
+
+[dir="rtl"] .prose li,
+[dir="rtl"] .branch-col li { padding-left: 0; padding-right: 20px; }
+[dir="rtl"] .prose li::before,
+[dir="rtl"] .branch-col li::before { left: auto; right: 2px; }
