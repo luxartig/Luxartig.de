@@ -14,9 +14,9 @@ const section = document.querySelector('[data-globe]')
 
 const GLOBE_LANG = (document.documentElement.lang || 'de').slice(0, 2)
 const GLOBE_STR = {
-  de: { orbit: 'im Orbit', approach: 'im Anflug', landed: 'gelandet' },
-  en: { orbit: 'in orbit', approach: 'approaching', landed: 'landed' },
-  ar: { orbit: 'في المدار', approach: 'في الاقتراب', landed: 'هبطنا' },
+  de: { orbit: 'im Orbit', approach: 'im Anflug', landed: 'gelandet', altUnit: 'km' },
+  en: { orbit: 'in orbit', approach: 'approaching', landed: 'landed', altUnit: 'km' },
+  ar: { orbit: 'في المدار', approach: 'في الاقتراب', landed: 'هبطنا', altUnit: 'كم' },
 }
 const GT = GLOBE_STR[GLOBE_LANG] || GLOBE_STR.de
 
@@ -303,7 +303,7 @@ if (canvas && section && window.WebGLRenderingContext) {
       markerEl.style.opacity = String(show)
     }
 
-    if (elAlt) elAlt.textContent = Math.round(lerp(240, 0, flight)) + ' km'
+    if (elAlt) elAlt.textContent = Math.round(lerp(240, 0, flight)) + ' ' + GT.altUnit
     if (elMode) elMode.textContent = smooth < 0.08 ? GT.orbit : flight < 0.985 ? GT.approach : GT.landed
     // NB: `is-arrived` is deliberately NOT set here. The address and phone
     // number must never depend on WebGL or on this loop running, so that

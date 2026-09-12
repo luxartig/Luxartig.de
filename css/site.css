@@ -1895,3 +1895,23 @@ a.info-link:hover .v { color: var(--accent2); }
 [dir="rtl"] .arrive-head { line-height: 1.4; }
 [dir="rtl"] .page-top h1 { line-height: 1.35; }
 [dir="rtl"] .mq-item { line-height: 1.3; }
+
+/* .qa-q hardcodes text-align:left for the LTR layout, which inherits
+   straight down into the Arabic question text instead of following the
+   page direction — flip it back, and mirror the answer's indent (it was
+   sized to sit under the question text, not under the now-mirrored
+   number/mark columns). */
+[dir="rtl"] .qa-q { text-align: right; }
+[dir="rtl"] .qa.is-open .qa-q { padding-left: 0; padding-right: 10px; }
+[dir="rtl"] .qa-a-inner { padding: 0 54px 28px 40px; }
+@media (max-width: 720px) {
+  [dir="rtl"] .qa-a-inner { padding: 0 40px 22px 0; }
+}
+
+/* Digits always read left-to-right, even in Arabic — but .odo is an
+   inline-flex of one column per digit, and .why-cell .n is a flex row of
+   [number, unit], so the generic RTL flex-mirroring that's correct for
+   prose silently reverses digit order (e.g. "24" -> "42") and swaps the
+   unit to the wrong side (e.g. "24h" -> "h24"). Force both back to LTR. */
+[dir="rtl"] .odo { direction: ltr; }
+[dir="rtl"] .why-cell .n { direction: ltr; justify-content: flex-end; }
