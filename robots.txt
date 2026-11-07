@@ -1,14 +1,15 @@
+# Content Signals (https://contentsignals.org): how our content may be used
+#   search   = classic search indexing and results
+#   ai-input = use as input/grounding for AI answers (ChatGPT, Gemini, Claude, ...)
+#   ai-train = training or fine-tuning of AI models
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
-# AI search / assistant crawlers: explicitly welcome
-User-agent: GPTBot
-Allow: /
+# AI search / assistant fetchers: welcome (they deliver us in AI answers)
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
-Allow: /
-User-agent: ClaudeBot
 Allow: /
 User-agent: Claude-SearchBot
 Allow: /
@@ -16,9 +17,17 @@ User-agent: Claude-User
 Allow: /
 User-agent: PerplexityBot
 Allow: /
+
+# Model-training crawlers: not allowed (matches ai-train=no)
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
+User-agent: CCBot
+Disallow: /
 
 Sitemap: https://luxartig.de/sitemap.xml

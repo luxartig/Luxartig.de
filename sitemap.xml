@@ -285,4 +285,25 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/blog/digitale-visitenkarte-erklaert/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/blog/digitale-visitenkarte-erklaert/" />
   </url>
+  <url>
+    <loc>https://luxartig.de/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/ueber-uns/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/en/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/ueber-uns/" />
+  </url>
+  <url>
+    <loc>https://luxartig.de/ar/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luxartig.de/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://luxartig.de/en/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://luxartig.de/ar/ueber-uns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luxartig.de/ueber-uns/" />
+  </url>
 </urlset>

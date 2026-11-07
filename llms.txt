@@ -12,9 +12,10 @@ Luxartig is a full-service digital partner for trades and hospitality businesses
 - Web: https://luxartig.de/
 
 ## Seiten / Pages
-- [Startseite (DE)](https://luxartig.de/): Leistungen, FAQ, Standort
-- [Home (EN)](https://luxartig.de/en/)
-- [الرئيسية (AR)](https://luxartig.de/ar/)
+- [Startseite (DE)](https://luxartig.de/): Leistungen, FAQ, Standort ([Markdown](https://luxartig.de/index.md))
+- [Über uns](https://luxartig.de/ueber-uns/): Wer wir sind und wie wir arbeiten
+- [Home (EN)](https://luxartig.de/en/) ([Markdown](https://luxartig.de/en/index.md)), [About](https://luxartig.de/en/ueber-uns/)
+- [الرئيسية (AR)](https://luxartig.de/ar/) ([Markdown](https://luxartig.de/ar/index.md)), [نبذة عنا](https://luxartig.de/ar/ueber-uns/)
 - [Branchen](https://luxartig.de/branchen/): Lösungen für Handwerk und Gastronomie
 - [Kontakt](https://luxartig.de/kontakt/): Erstgespräch buchen oder Nachricht senden
 - [Blog](https://luxartig.de/blog/): Praxisartikel zu Website, Branding, Marketing, Automatisierung

@@ -27,13 +27,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://luxartig.de/#business",
   "name": "Luxartig",
   "image": "https://luxartig.de/assets/og-image.png",
   "url": "https://luxartig.de/ar/",
   "telephone": "+495120153569",
   "email": "info@luxartig.de",
+  "description": "شريك رقمي متكامل لأصحاب الحرف والمطاعم في باساو: التصميم ووسائل التواصل الاجتماعي والمواقع والمتاجر الإلكترونية (مع SEO وGEO) والبطاقة الرقمية والأتمتة.",
+  "logo": "https://luxartig.de/assets/icon-mark.png",
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+495120153569", "email": "info@luxartig.de", "availableLanguage": ["de", "en", "ar"]},
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Am Sportfeld 10",
@@ -71,6 +74,11 @@
 ]}
 </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://luxartig.de/ar/#website","url":"https://luxartig.de/ar/","name":"Luxartig","description":"شريك رقمي متكامل لأصحاب الحرف والمطاعم في باساو: التصميم ووسائل التواصل الاجتماعي والمواقع والمتاجر الإلكترونية (مع SEO وGEO) والبطاقة الرقمية والأتمتة.","inLanguage":"ar","publisher":{"@id":"https://luxartig.de/#business"}}
+</script>
+<link rel="alternate" type="text/markdown" href="/ar/index.md" title="Markdown" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
 <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,6 +126,7 @@
     <a href="/ar/branchen/"><i>05</i>المجالات</a>
     <a href="/ar/blog/"><i>06</i>المدونة</a>
     <a href="/ar/kontakt/"><i>07</i>تواصل معنا</a>
+    <a href="/ar/ueber-uns/"><i>08</i>نبذة عنا</a>
   </div>
   <div class="menu-foot">
     <a href="mailto:info@luxartig.de">info@luxartig.de</a>
@@ -523,6 +532,7 @@
       <a href="https://www.tiktok.com/@luxartig" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></a>
     </div>
     <div class="ft-links">
+      <a href="/ar/ueber-uns/">نبذة عنا</a>
       <a href="/ar/impressum/">البيانات القانونية</a>
       <a href="/ar/datenschutz/">سياسة الخصوصية</a>
       <a href="/ar/agb/">الشروط والأحكام</a>
@@ -547,6 +557,7 @@
 <script type="module" src="/js/core.js"></script>
 <script type="module" src="/js/globe.js"></script>
 <script src="/js/experience.js"></script>
+<script src="/js/webmcp.js" defer></script>
 <script src="/js/cookie-consent.js"></script>
 
 </body>

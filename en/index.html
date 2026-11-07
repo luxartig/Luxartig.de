@@ -27,13 +27,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://luxartig.de/#business",
   "name": "Luxartig",
   "image": "https://luxartig.de/assets/og-image.png",
   "url": "https://luxartig.de/en/",
   "telephone": "+495120153569",
   "email": "info@luxartig.de",
+  "description": "Digital all-in-one partner for trades and hospitality businesses in Passau, Germany: design, social media, websites and online shops (incl. SEO and GEO), digital business cards and automation.",
+  "logo": "https://luxartig.de/assets/icon-mark.png",
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+495120153569", "email": "info@luxartig.de", "availableLanguage": ["de", "en", "ar"]},
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Am Sportfeld 10",
@@ -71,6 +74,11 @@
 ]}
 </script>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://luxartig.de/en/#website","url":"https://luxartig.de/en/","name":"Luxartig","description":"Digital all-in-one partner for trades and hospitality businesses in Passau, Germany: design, social media, websites and online shops (incl. SEO and GEO), digital business cards and automation.","inLanguage":"en","publisher":{"@id":"https://luxartig.de/#business"}}
+</script>
+<link rel="alternate" type="text/markdown" href="/en/index.md" title="Markdown" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
 <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,6 +126,7 @@
     <a href="/en/branchen/"><i>05</i>Industries</a>
     <a href="/en/blog/"><i>06</i>Blog</a>
     <a href="/en/kontakt/"><i>07</i>Contact</a>
+    <a href="/en/ueber-uns/"><i>08</i>About</a>
   </div>
   <div class="menu-foot">
     <a href="mailto:info@luxartig.de">info@luxartig.de</a>
@@ -523,6 +532,7 @@
       <a href="https://www.tiktok.com/@luxartig" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48Z"/></svg></a>
     </div>
     <div class="ft-links">
+      <a href="/en/ueber-uns/">About</a>
       <a href="/en/impressum/">Imprint</a>
       <a href="/en/datenschutz/">Privacy Policy</a>
       <a href="/en/agb/">Terms &amp; Conditions</a>
@@ -547,6 +557,7 @@
 <script type="module" src="/js/core.js"></script>
 <script type="module" src="/js/globe.js"></script>
 <script src="/js/experience.js"></script>
+<script src="/js/webmcp.js" defer></script>
 <script src="/js/cookie-consent.js"></script>
 
 </body>
