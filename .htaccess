@@ -1,0 +1,68 @@
+# Luxartig on Hostinger (LiteSpeed, Apache-compatible .htaccess)
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+AddType text/markdown .md
+AddType text/plain .txt
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# One canonical origin: https + no www
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://luxartig.de%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://luxartig.de%{REQUEST_URI} [R=301,L]
+
+# Never expose dotfiles (except /.well-known/)
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+# Old *.html URLs -> clean directory URLs; /x/index.html -> /x/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+RewriteRule ^(.+)\.html$ /$1/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/(.*/)?index\.html[\s?]
+RewriteRule ^ /%1 [R=301,L]
+
+# Markdown for agents: Accept: text/markdown on a page that has an index.md twin
+RewriteCond %{HTTP:Accept} text/markdown [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1index.md -f
+RewriteRule ^((?:.*/)?)$ /$1index.md [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Directory pages can differ by Accept (HTML vs Markdown)
+SetEnvIf Request_URI "/$" IS_DIR=1
+Header append Vary Accept env=IS_DIR
+
+# Advertise the Markdown twin + llms.txt on the three homepages (RFC 8288)
+SetEnvIf Request_URI "^/$" LINK_DE=1
+SetEnvIf Request_URI "^/en/$" LINK_EN=1
+SetEnvIf Request_URI "^/ar/$" LINK_AR=1
+Header always set Link '</index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"' env=LINK_DE
+Header always set Link '</en/index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"' env=LINK_EN
+Header always set Link '</ar/index.md>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"; type="text/plain"' env=LINK_AR
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 10 minutes"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/webp "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 month"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 hour"
+ExpiresByType application/javascript "access plus 1 hour"
+ExpiresByType text/javascript "access plus 1 hour"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/markdown text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
