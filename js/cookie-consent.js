@@ -1,10 +1,10 @@
 // ============ Cookie consent ============
 // Necessary storage (the consent choice itself) needs no permission.
-// Everything else — GHL chat widget + calendar embed, both set cookies from
-// leadconnectorhq.com / msgsndr.com — only loads after the visitor accepts.
+// The booking-calendar embed sets cookies from leadconnectorhq.com / msgsndr.com
+// and only loads after the visitor accepts. (The website chat is our own
+// system.luxartig.de widget and is included directly in each page.)
 ;(function () {
   const KEY = 'luxartig_cookie_consent'
-  const WIDGET_ID = '6a1b7e021b5a98ef9d744a41'
 
   function getConsent() {
     try { return localStorage.getItem(KEY) } catch (e) { return null }
@@ -22,10 +22,6 @@
   }
 
   function loadExternalServices() {
-    loadScript('https://widgets.leadconnectorhq.com/loader.js', {
-      'data-resources-url': 'https://widgets.leadconnectorhq.com/chat-widget/loader.js',
-      'data-widget-id': WIDGET_ID,
-    })
     document.querySelectorAll('[data-calendar-placeholder]').forEach((el) => {
       const src = el.getAttribute('data-src')
       const iframe = document.createElement('iframe')
